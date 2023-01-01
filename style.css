@@ -1,0 +1,138 @@
+/* ------------PALETA DE COLORES CSS VINTAGE TONOS LILAS----------------------- 
+.color1 {color: #4a233b;}
+.color2 {color: #6f3958;}
+.color3 {color: #a45a7f;}
+.color4 {color: #f185b2;}
+.color5 {color: #f8b2e7;}
+*/
+
+*{
+    background: linear-gradient( 90deg,#4a233b,#a45a7f);
+    margin: 0 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+nav{
+    margin-bottom: 20px;
+    padding: 0px;
+    height: 60px;
+}
+
+nav h2{
+    display: inline;
+    margin: 0 480px;
+    font-size: 2em;
+    background: none;
+    color: #e8e9ca; 
+    position: absolute;
+    margin-top: 15px;
+}
+
+nav img{
+    margin: 15px auto auto 10px;
+    background: none;
+}
+
+.contenedor{
+    background:linear-gradient(90deg,#f185b2,#efd7e9) ;
+}
+
+form{
+    background: none; 
+    height: 460px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+textarea, .contenedor-encriptacion{
+    /* background-color: transparent; */
+    background: linear-gradient( 90deg,#4a233b,#6f3958);
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    color: #e8e9ca;
+    padding: 20px;
+    outline: 0px none transparent;
+    resize: none;
+    font-size: 1.5em;
+    border-radius: 10px;
+}
+
+.contenedor-encriptacion img{
+    background: none;
+}
+
+.mensaje-muñeco{
+    color: black;
+    font-weight: bold;
+    font-size: 1em;
+    margin-top: 30px;
+    background:none;
+}
+
+.boton-encriptar, .boton-desencriptar, .boton-copiar{
+    border-radius: 10px;
+    display: inline-block;
+    margin-left: 150px;
+    margin-bottom: 20px;
+    padding: 15px;
+    width: 150px;
+    text-align: center;
+    font-size: 1.2em;
+    color: #e8e9ca;  
+}
+
+.boton-encriptar, .boton-desencriptar, .boton-copiar:hover{
+    cursor: pointer;
+}
+
+.boton-copiar{
+    margin-left: 350px;
+}
+
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.copyright{
+    font-size: 1em;
+    color: #e8e9ca;
+    background: none;
+    position: absolute;
+    left: 300px;
+}
+
+.div-redes{
+    background: none;
+    
+}
+
+.logo{
+    width: 30px;
+    margin-left: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.logo:hover{
+    cursor: pointer;
+}
+
+.logo-footer-alura{
+    position: absolute;
+    right: 200px;
+    display: flex;
+    flex-direction: row;
+    background: none;
+}
+
+.alura-footer{
+    font-weight: bold;
+    font-size: 1.5em;
+    color:rgb(5, 5, 89);
+    background:none;
+}

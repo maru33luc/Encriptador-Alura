@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador de Texto</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <img src="/Encriptador/Imagenes/Vector.png" alt="Logo Alura">
+            <h2>
+                Encriptador de Texto
+            </h2>
+
+        </nav>
+    </header>
+
+    <main>
+        <div class="contenedor">
+
+            <form id="formulario" action="" method="">
+                <textarea name="" id="palabra" autocapitalize="none" cols="50" rows="15"
+                    placeholder="Escribe el texto a Encriptar o desencriptar - solo minusculas, sin acentos ni caracteres especiales."
+                    autocomplete="off" onkeypress="return validar (event);"></textarea>
+
+                <div class="contenedor-encriptacion">
+                    <img src="/Encriptador/Imagenes/Muñeco.png" alt="Imagen Muñeco">
+                    <p class="mensaje-muñeco">Ningún mensaje fue encontrado</p>
+                </div>
+            </form>
+
+            <div class="boton-encriptar">Encriptar</div>
+            <div class="boton-desencriptar">Desencriptar</div>
+            <div class="boton-copiar">Copiar texto</div>
+        </div>
+
+
+
+    </main>
+
+    <footer>
+        <div class="copyright">
+            &copy Marina Lucero
+        </div>
+        <div class="div-redes">
+            <img class="logo" src="/Encriptador/Imagenes/instagram.png" alt="">
+        </div>
+        <div class="div-redes">
+            <img class="logo" src="/Encriptador/Imagenes/facebook.png" alt="">
+        </div>
+        <div class="div-redes">
+            <img class="logo" src="/Encriptador/Imagenes/logotipo-de-linkedin.png" alt="">
+        </div>
+
+        <div class="logo-footer-alura">
+            <p class="alura-footer">Alura</p>
+            <p class="alura-footer" style="font-size: 0.8em; margin-top:11px; margin-left:5px">LATAM</p>
+        </div>
+
+
+
+    </footer>
+
+    <script>
+        function validar(event) {
+            var charCode = event.keyCode;
+            const re = /[^a-z ]/g;
+            console.log(charCode);
+
+            if (charCode >= 97 && charCode <= 122 || charCode == 32 || charCode == 46)
+                return true;
+            else {
+                alert("Solo minusculas, sin acentos ni caracteres especiales");
+                return false;
+            }
+        }
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
