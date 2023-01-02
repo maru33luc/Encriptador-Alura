@@ -94,6 +94,7 @@ textarea, .contenedor-encriptacion{
 
 .boton-mensaje-encriptado{
     display: none;
+    background: none;
 }
 
 footer{

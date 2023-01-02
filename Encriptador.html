@@ -8,9 +8,8 @@
     <title>Encriptador de Texto</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
-
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -20,13 +19,11 @@
             <h2>
                 Encriptador de Texto
             </h2>
-
         </nav>
     </header>
 
     <main>
         <div class="contenedor">
-
             <form id="formulario" action="" method="">
                 <textarea name="" id="palabra" autocapitalize="none" cols="50" rows="15"
                     placeholder="Escribe el texto a Encriptar o desencriptar - solo minusculas, sin acentos ni caracteres especiales."
@@ -34,19 +31,17 @@
 
                 <div class="contenedor-encriptacion">
                     <div class="boton-mensaje-encriptado" id="boton-mensaje-encriptado">Mensaje encriptado:</div>
-                    <img class="imagen-muñeco" id="imagen-muñeco"src="/Encriptador/Imagenes/Muñeco.png" alt="Imagen Muñeco">
+                    <img class="imagen-muñeco" id="imagen-muñeco" src="/Encriptador/Imagenes/Muñeco.png"
+                        alt="Imagen Muñeco">
                     <p class="mensaje-muñeco" id="mensaje-muñeco">Ningún mensaje fue encontrado</p>
                 </div>
             </form>
 
             <div class="boton-encriptar" onclick="encriptar()">Encriptar</div>
             <div class="boton-desencriptar" onclick="desencriptar()">Desencriptar</div>
-            <div class="boton-copiar" id="boton-copiar">Copiar texto</div>
+            <div class="boton-copiar" id="boton-copiar" onclick="copiar()">Copiar texto</div>
             <div class="boton-mensaje-encriptado" id="boton-mensaje-encriptado">Mensaje encriptado</div>
         </div>
-
-
-
     </main>
 
     <footer>
@@ -71,7 +66,7 @@
     </footer>
 
     <script>
-       
+
         /* Funcion que valida que solo se ingresen letras minusculas, sin acentos ni caracteres especiales */
         function validar(event) {
             var charCode = event.keyCode;
@@ -86,58 +81,67 @@
             }
         }
 
-function encriptar(){
-    /*Oculta la imagen del muñeco en la encriptacion*/
-    document.getElementById("imagen-muñeco").style.display = "none";
+        function encriptar() {
+            
+            /*Oculta la imagen del muñeco en la encriptacion*/
+            document.getElementById("imagen-muñeco").style.display = "none";
 
-/*Activa el mensaje: Mensaje Encriptado*/
-document.getElementById('boton-mensaje-encriptado').style.display = 'block';
- /*Activa el boton copiar*/
-document.getElementById('boton-copiar').style.display = 'inline-block';
-/* Aumenta el ancho del contenedor de la encriptacion */
-document.querySelector(".contenedor-encriptacion").style.width= "50%";
+            /*Activa el mensaje: Mensaje Encriptado*/
+            document.getElementById('boton-mensaje-encriptado').style.display = 'block';
+            /*Activa el boton copiar*/
+            document.getElementById('boton-copiar').style.display = 'inline-block';
+            /* Aumenta el ancho del contenedor de la encriptacion */
+            document.querySelector(".contenedor-encriptacion").style.width = "50%";
 
-  /*Obtiene el texto a variable*/
-  mensaje = document.getElementById("palabra").value
+            /*Obtiene el texto a variable*/
+            mensaje = document.getElementById("palabra").value
 
-  /* Encriptacion del mensaje */
- mensajeEncriptado = mensaje.replaceAll('e', "enter")
-    .replaceAll('i', 'imes')
-    .replaceAll('a', 'ai')
-    .replaceAll('o', 'ober')
-    .replaceAll('u', 'ufat');
+            /* Encriptacion del mensaje */
+            mensajeEncriptado = mensaje.replaceAll('e', "enter")
+                .replaceAll('i', 'imes')
+                .replaceAll('a', 'ai')
+                .replaceAll('o', 'ober')
+                .replaceAll('u', 'ufat');
 
-document.getElementById("mensaje-muñeco").innerHTML= mensajeEncriptado;
-}
+                /*Escribir si es encriptado o desencriptado*/
+            document.getElementById("mensaje-muñeco").innerHTML = mensajeEncriptado;
 
-function desencriptar() {
-    /*Oculta la imagen de la encriptacion*/
-    document.getElementById("imagen-muñeco").style.display = "none";
-    /*Activa el mensaje: Mensaje Desencriptado*/
-document.getElementById('boton-mensaje-encriptado').style.display = 'block';
-    /*Activa el boton copiar*/
-    document.getElementById('boton-copiar').style.display = 'inline-block'
-/* Aumenta el ancho del contenedor de la encriptacion */
-document.querySelector(".contenedor-encriptacion").style.width= "50%";
+             /*Activa el mensaje: Mensaje Encriptado*/
+             document.getElementById('boton-mensaje-encriptado').innerHTML = 'Mensaje Encriptado:';
+        }
 
- /*Obtiene el texto a variable*/
- mensaje = document.getElementById("palabra").value
+        function desencriptar() {
+            /*Oculta la imagen de la encriptacion*/
+            document.getElementById("imagen-muñeco").style.display = "none";
+            /*Activa el mensaje: Mensaje Desencriptado*/
+            document.getElementById('boton-mensaje-encriptado').style.display = 'block';
+            /*Activa el boton copiar*/
+            document.getElementById('boton-copiar').style.display = 'inline-block'
+            /* Aumenta el ancho del contenedor de la encriptacion */
+            document.querySelector(".contenedor-encriptacion").style.width = "50%";
 
-    /*Desencriptar mensaje*/
-    mensajeDesencriptado = mensaje.replaceAll('enter', "e")
-        .replaceAll('imes', 'i')
-        .replaceAll('ai', 'a')
-        .replaceAll('ober', 'o')
-        .replaceAll('ufat', 'u');
+            /*Obtiene el texto a variable*/
+            mensaje = document.getElementById("palabra").value
 
-document.getElementById("mensaje-muñeco").innerHTML= mensajeDesencriptado;
-                
-    /*Escribir si es encriptado o desencriptado*/
-    /*Activa el mensaje: Mensaje Encriptado*/
-document.getElementById('boton-mensaje-encriptado').innerHTML = 'Mensaje Desencriptado';
-}
+            /*Desencriptar mensaje*/
+            mensajeDesencriptado = mensaje.replaceAll('enter', "e")
+                .replaceAll('imes', 'i')
+                .replaceAll('ai', 'a')
+                .replaceAll('ober', 'o')
+                .replaceAll('ufat', 'u');
 
+            /*Escribir si es encriptado o desencriptado*/
+            document.getElementById("mensaje-muñeco").innerHTML = mensajeDesencriptado;
 
+            /*Activa el mensaje: Mensaje Encriptado*/
+            document.getElementById('boton-mensaje-encriptado').innerHTML = 'Mensaje Desencriptado:';
+        }
+
+        function copiar (){
+            var contenido = document.getElementById("mensaje-muñeco").innerHTML;
+            navigator.clipboard.writeText(contenido)
+            alert("El mensaje encriptado ha sido copiado")
+        }
 
     </script>
 </body>
