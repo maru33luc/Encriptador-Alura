@@ -31,8 +31,7 @@
 
                 <div class="contenedor-encriptacion">
                     <div class="boton-mensaje-encriptado" id="boton-mensaje-encriptado">Mensaje encriptado:</div>
-                    <img class="imagen-muñeco" id="imagen-muñeco" src="Imagenes/Muñeco.png"
-                        alt="Imagen Muñeco">
+                    <img class="imagen-muñeco" id="imagen-muñeco" src="Imagenes/Muñeco.png" alt="Imagen Muñeco">
                     <p class="mensaje-muñeco" id="mensaje-muñeco">Ningún mensaje fue encontrado</p>
                 </div>
             </form>
@@ -82,7 +81,7 @@
         }
 
         function encriptar() {
-            
+
             /*Oculta la imagen del muñeco en la encriptacion*/
             document.getElementById("imagen-muñeco").style.display = "none";
 
@@ -103,11 +102,11 @@
                 .replaceAll('o', 'ober')
                 .replaceAll('u', 'ufat');
 
-                /*Escribir si es encriptado o desencriptado*/
+            /*Escribir si es encriptado o desencriptado*/
             document.getElementById("mensaje-muñeco").innerHTML = mensajeEncriptado;
 
-             /*Activa el mensaje: Mensaje Encriptado*/
-             document.getElementById('boton-mensaje-encriptado').innerHTML = 'Mensaje Encriptado:';
+            /*Activa el mensaje: Mensaje Encriptado*/
+            document.getElementById('boton-mensaje-encriptado').innerHTML = 'Mensaje Encriptado:';
         }
 
         function desencriptar() {
@@ -137,10 +136,15 @@
             document.getElementById('boton-mensaje-encriptado').innerHTML = 'Mensaje Desencriptado:';
         }
 
-        function copiar (){
+        function copiar() {
             var contenido = document.getElementById("mensaje-muñeco").innerHTML;
-            navigator.clipboard.writeText(contenido)
-            alert("El mensaje encriptado ha sido copiado")
+            console.log(contenido);
+            if (contenido == "") {
+                alert("No hay nada para copiar")
+            } else {
+                navigator.clipboard.writeText(contenido)
+                alert("El mensaje ha sido copiado")
+            }
         }
 
     </script>
