@@ -89,6 +89,11 @@ textarea, .contenedor-encriptacion{
 
 .boton-copiar{
     margin-left: 350px;
+    display: none;
+}
+
+.boton-mensaje-encriptado{
+    display: none;
 }
 
 footer{
