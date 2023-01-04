@@ -135,7 +135,7 @@
             /*Activa el mensaje: Mensaje Encriptado*/
             document.getElementById('boton-mensaje-encriptado').innerHTML = 'Mensaje Desencriptado:';
         }
-
+/*
         function copiar() {
             var contenido = document.getElementById("mensaje-muñeco").innerHTML;
             console.log(contenido);
@@ -146,6 +146,26 @@
                 alert("El mensaje ha sido copiado")
             }
         }
+*/
+
+function copiar() {
+    var contenido = document.getElementById("mensaje-muñeco").innerHTML;
+    console.log(contenido);
+    if (contenido == "") {
+        alert("No hay nada para copiar")
+    } else {
+        navigator.clipboard
+            .writeText(contenido)
+            .then(() => {
+            alert("successfully copied");
+            })
+            .catch(() => {
+            alert("something went wrong");
+            });
+    }
+}
+
+
 
     </script>
 </body>
